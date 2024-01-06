@@ -217,6 +217,15 @@
     document.addEventListener("DOMContentLoaded", function () {
       var MainImg = document.getElementById("MainImg");
       var smallimg = document.getElementsByClassName("small-img");
+      function toggleNavbar() {
+  const navbar = document.querySelector('#navbar');
+  navbar.classList.toggle('active');
+}
+
+function closeNavbar() {
+  const navbar = document.querySelector('#navbar');
+  navbar.classList.remove('active');
+}
 
       smallimg[0].onclick = function () {
         MainImg.src = smallimg[0].src;

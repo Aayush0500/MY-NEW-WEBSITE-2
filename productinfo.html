@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css files/extra.css">
   <link rel="stylesheet" href="css files/media query.css">
   <link rel="stylesheet" href="css files/shop.css">
+  <link rel="stylesheet" href="css files/cart.css">
   <link rel="stylesheet" href="productinfo.css">
 
 </head>
@@ -23,10 +24,10 @@
         <li class="close-icon" onclick="closeNavbar()"><i class="fal fa-times"></i></li>
         <li><a href="index.html">Home</a></li>
         <li><a class="active" href="shop.html">Shop</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact us</a></li>
-        <li><a href="cart.html"><i class="fal fa-shopping-cart"></i></a></li>
+        <!-- <li><a href="blog.html">Blog</a></li> -->
+        <!-- <li><a href="about.html">About</a></li> -->
+        <!-- <li><a href="contact.html">Contact us</a></li> -->
+        <li><a href="cart.html"><i class="fal fa-shopping-cart cart2"></i></a></li>
 
       </ul>
     </div>
@@ -217,15 +218,6 @@
     document.addEventListener("DOMContentLoaded", function () {
       var MainImg = document.getElementById("MainImg");
       var smallimg = document.getElementsByClassName("small-img");
-      function toggleNavbar() {
-  const navbar = document.querySelector('#navbar');
-  navbar.classList.toggle('active');
-}
-
-function closeNavbar() {
-  const navbar = document.querySelector('#navbar');
-  navbar.classList.remove('active');
-}
 
       smallimg[0].onclick = function () {
         MainImg.src = smallimg[0].src;
@@ -245,10 +237,7 @@ function closeNavbar() {
 
     });
   </script>
-
-  <script src="script.js"></script>
-
-
+<script src="script.js"></script>
 
 </body>
 

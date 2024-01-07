@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gm store</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="css files/home.css">
+    <link rel="stylesheet" href="css files/extra.css">
+    <link rel="stylesheet" href="css files/media query.css">
+    <link rel="stylesheet" href="css files/shop.css">
+    <link rel="stylesheet" href="css files/cart.css">
+    <link rel="stylesheet" href="productinfo.css">
+
+</head>
+
+
+<body>
+    <section id="header" class="flex">
+        <a href="#"><img src="" class="logo" alt="logo"></a>
+        <div>
+            <ul id="navbar" class="flexcenter">
+                <li class="close-icon" onclick="closeNavbar()"><i class="fal fa-times"></i></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <!-- <li><a href="blog.html">Blog</a></li> -->
+                <!-- <li><a href="about.html">About</a></li> -->
+                <!-- <li><a href="contact.html">Contact us</a></li> -->
+                <li><a class="active" href="cart.html"><i class="fal fa-shopping-cart cart2"></i></a></li>
+
+            </ul>
+        </div>
+        <div id="mobile">
+            <i id="bar" class="fas fa-outdent" onclick="toggleNavbar()"></i>
+            <a href="cart.html"><i class="fal fa-shopping-cart cart2"></i></a>
+        </div>
+    </section>
+    <section class="page-header p-1">
+        <h2>#cart</h2>
+        <p>leave a message. we love to hear from you!</p>
+    </section>
+    <section id="cart" class="p-1">
+        <table>
+            <thead>
+                <tr>
+                    <td>Removes</td>
+                    <td>Image</td>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Subtotal</td>
+                </tr>
+            </thead>
+            <tbody>
+
+
+
+
+                <tr>
+                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                    <td><img src="https://github.com/tech2etc/Build-and-Deploy-Ecommerce-Website/blob/main/img/products/f1.jpg?raw=true"
+                            alt=""></td>
+                    <td>Cartoon Astronaut t-shirts</td>
+                    <td>$118.19</td>
+                    <td><input type="number" value="1"></td>
+                    <td>$118.19</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                    <td><img src="https://github.com/tech2etc/Build-and-Deploy-Ecommerce-Website/blob/main/img/products/f1.jpg?raw=true"
+                            alt=""></td>
+                    <td>Cartoon Astronaut t-shirts</td>
+                    <td>$118.19</td>
+                    <td><input type="number" value="1"></td>
+                    <td>$118.19</td>
+                </tr>
+                <tr>
+                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                    <td><img src="https://github.com/tech2etc/Build-and-Deploy-Ecommerce-Website/blob/main/img/products/f1.jpg?raw=true"
+                            alt=""></td>
+                    <td>Cartoon Astronaut t-shirts</td>
+                    <td>$118.19</td>
+                    <td><input type="number" value="1"></td>
+                    <td>$118.19</td>
+                </tr>
+
+
+                <!-- More rows... -->
+            </tbody>
+        </table>
+    </section>
+    <div class="line"></div>
+    <section id="cart-add" class="p-1">
+        <div id="coupon">
+            <h3>apply coupon</h3>
+            <div>
+                <input type="text" placeholder="enter your coupon">
+                <button class="normal">apply</button>
+            </div>
+        </div>
+        <div id="subtotal">
+            <h3>cart total</h3>
+            <table>
+                <tr>
+                    <td>
+                        cart subtotal
+                    </td>
+                    <td>$ 335</td>
+                </tr>
+                <tr>
+                    <td>shipping</td>
+                    <td>free</td>
+                </tr>
+                <tr>
+                    <td><strong>total</strong></td>
+                    <td><strong>$ 335</strong></td>
+                </tr>
+            </table>
+            <button class="normal">proceed to checkout</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <h4>Company</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <h4>Products</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Product 1</a></li>
+                        <li><a href="#">Product 2</a></li>
+                        <li><a href="#">Product 3</a></li>
+                        <li><a href="#">Product 4</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <h4>Services</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Service 1</a></li>
+                        <li><a href="#">Service 2</a></li>
+                        <li><a href="#">Service 3</a></li>
+                        <li><a href="#">Service 4</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <h4>Follow Us</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

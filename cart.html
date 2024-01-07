@@ -53,44 +53,37 @@
                 </tr>
             </thead>
             <tbody>
-
-
-
-
-                <tr>
+                <!-- Product rows with assumed classes -->
+                <tr class="product-row">
                     <td><a href="#"><i class="far fa-times-circle"></i></a></td>
-                    <td><img src="https://github.com/tech2etc/Build-and-Deploy-Ecommerce-Website/blob/main/img/products/f1.jpg?raw=true"
-                            alt=""></td>
-                    <td>Cartoon Astronaut t-shirts</td>
-                    <td>$118.19</td>
-                    <td><input type="number" value="1"></td>
-                    <td>$118.19</td>
-                </tr>
-                
-                <tr>
-                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
-                    <td><img src="https://github.com/tech2etc/Build-and-Deploy-Ecommerce-Website/blob/main/img/products/f1.jpg?raw=true"
-                            alt=""></td>
-                    <td>Cartoon Astronaut t-shirts</td>
-                    <td>$118.19</td>
-                    <td><input type="number" value="1"></td>
-                    <td>$118.19</td>
-                </tr>
-                <tr>
-                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
-                    <td><img src="https://github.com/tech2etc/Build-and-Deploy-Ecommerce-Website/blob/main/img/products/f1.jpg?raw=true"
-                            alt=""></td>
-                    <td>Cartoon Astronaut t-shirts</td>
-                    <td>$118.19</td>
-                    <td><input type="number" value="1"></td>
-                    <td>$118.19</td>
+                    <td><img src="https://github.com/tech2etc/Build-and-Deploy-Ecommerce-Website/blob/main/img/products/f1.jpg?raw=true"" alt=""></td>
+                    <td>Product 1</td>
+                    <td class="product-price">$50.00</td>
+                    <td><input type="number" value="1" class="quantity-input" oninput="updateCart()"></td>
+                    <td class="subtotal">$50.00</td>
                 </tr>
 
-
-                <!-- More rows... -->
+                <tr class="product-row">
+                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                    <td><img src="https://github.com/tech2etc/Build-and-Deploy-Ecommerce-Website/blob/main/img/products/f1.jpg?raw=true"" alt=""></td>
+                    <td>Product 2</td>
+                    <td class="product-price">$30.00</td>
+                    <td><input type="number" value="1" class="quantity-input" oninput="updateCart()"></td>
+                    <td class="subtotal">$30.00</td>
+                </tr>
+                <tr class="product-row">
+                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                    <td><img src="https://github.com/tech2etc/Build-and-Deploy-Ecommerce-Website/blob/main/img/products/f1.jpg?raw=true"" alt=""></td>
+                    <td>Product 2</td>
+                    <td class="product-price">$70.00</td>
+                    <td><input type="number" value="1" class="quantity-input" oninput="updateCart()"></td>
+                    <td class="subtotal">$30.00</td>
+                </tr>
+                <!-- More product rows... -->
             </tbody>
         </table>
     </section>
+
     <div class="line"></div>
     <section id="cart-add" class="p-1">
         <div id="coupon">
@@ -103,20 +96,20 @@
         <div id="subtotal">
             <h3>cart total</h3>
             <table>
+                <!-- Inside the #subtotal section -->
                 <tr>
-                    <td>
-                        cart subtotal
-                    </td>
-                    <td>$ 335</td>
+                    <td>cart subtotal</td>
+                    <td id="cart-subtotal">$335</td>
                 </tr>
                 <tr>
                     <td>shipping</td>
-                    <td>free</td>
+                    <td id="shipping-fee">free</td>
                 </tr>
                 <tr>
                     <td><strong>total</strong></td>
-                    <td><strong>$ 335</strong></td>
+                    <td id="cart-total"><strong>$335</strong></td>
                 </tr>
+
             </table>
             <button class="normal">proceed to checkout</button>
         </div>
@@ -166,6 +159,54 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        function updateCart() {
+          // Get all elements with the class 'product-row'
+          var productRows = document.querySelectorAll('.product-row');
+      
+          // Variables to store the subtotal and total
+          var cartSubtotal = 0;
+          var cartTotal = 0;
+      
+          // Iterate through each product row
+          productRows.forEach(function (row) {
+            // Get the product price and quantity from the row
+            var priceCell = row.querySelector('.product-price');
+            var quantityInput = row.querySelector('.quantity-input');
+            var subtotalCell = row.querySelector('.subtotal');
+      
+            var price = parseFloat(priceCell.innerText.replace('$', ''));
+            var quantity = parseInt(quantityInput.value);
+      
+            // Calculate and update the subtotal for each product
+            var subtotal = price * quantity;
+            subtotalCell.innerText = '$' + subtotal.toFixed(2);
+      
+            // Accumulate the subtotal for the overall cart
+            cartSubtotal += subtotal;
+          });
+      
+          // Update the cart subtotal
+          var cartSubtotalElement = document.getElementById('cart-subtotal');
+          cartSubtotalElement.innerText = '$' + cartSubtotal.toFixed(2);
+      
+          // Calculate shipping fee based on cart subtotal
+          var shippingFee = cartSubtotal < 1000 ? 50 : 0;
+      
+          // Update the shipping fee
+          var shippingFeeElement = document.getElementById('shipping-fee');
+          shippingFeeElement.innerText = shippingFee === 0 ? 'free' : '$' + shippingFee.toFixed(2);
+      
+          // Calculate the total cart amount
+          cartTotal = cartSubtotal + shippingFee;
+      
+          // Update the cart total
+          var cartTotalElement = document.getElementById('cart-total');
+          cartTotalElement.innerHTML = '<strong>$' + cartTotal.toFixed(2) + '</strong>';
+        }
+      </script>
+
+
 
 </body>
 
